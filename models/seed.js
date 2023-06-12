@@ -1,0 +1,57 @@
+module.exports = [
+    {
+        address: '184 Kent Ave',
+        apt_num: 'A515',
+        city: 'Brooklyn',
+        state: 'NY',
+        zip_code: 11249,
+        neighborhood: 'Williamsburg',
+        borough: 'Brooklyn',
+        status: 'Available',
+        property_type: 'Condo',
+        bedrooms: 2,
+        bathrooms: 2,
+        price: 1775000,
+        square_feet: 1086,
+        price_per_sq_ft: 1634,
+        description: "Welcome to The Austin Nichols House, a luxurious waterfront condominium in the heart of Williamsburg. This stunning 2 bed, 2 bath Loft boasts 12' beamed ceilings, high-end finishes, and smart home integration, making it the perfect place to call home. This unique corner-unit features an open-concept living and dining area with large, luminous windows that flood the space with natural light from both southern and eastern exposures, and beautiful oak herringbone floors. Custom designer kitchen from Vipp with top-of-the-line appliances, including a Gaggenau cooktop and range with professional quality range hood and Liebherr fridge. The spacious primary bedroom boasts custom closet and an en-suite designer bathroom with high-end finishes and rain shower. The second bedroom is equally spacious and is conveniently located adjacent to the second full bathroom. This unit also includes in-unit Miele washer/dryer, central air conditioning, and smart home features, including a Nest thermostat, Ring doorbell, and Lutron lighting and shades. Residents of The Austin Nichols House enjoy access to a host of amenities, including a the most impressive gym you have ever seen with waterfront and skyline views, furnished rooftop terrace with grills, a newly designed children’s playroom, resident’s lounge for entertainment or work-from-home, music room with piano, library, movie theater, and serene zen-garden. The building has 24 hour concierge, doorman, live-in super and quite possibly the best staff around. Located right near the best restaurants, shops, and nightlife that Williamsburg has to offer, as well as easy access to transportation with the L train and the Ferry. Don't miss your chance to own this stunning loft apartment in one of Brooklyn's most sought-after buildings.",
+        image_url: 'https://www.compass.com/m/0/6e8b595c-5100-49ce-b94f-9e8d3252cd7a/1500x1000.jpg'
+    },
+    {
+        address: '255 West 23rd St',
+        apt_num: '4HW',
+        city: 'New York',
+        state: 'NY',
+        zip_code: 10011,
+        neighborhood: 'Chelsea',
+        borough: 'Manhattan',
+        status: 'Available',
+        property_type: 'Co-op',
+        bedrooms: 2,
+        bathrooms: 1,
+        price: 1495000,
+        square_feet: 0,
+        price_per_sq_ft: 0,
+        description: "Fall in love instantly with this stunning two bedroom home, meticulously renovated with wide planked oak floors, exposed brick walls, cast iron columns, and soundproof windows. This expansive layout is over 1,000sf with sunny southern exposure and has a separate dining area. The open kitchen has a Sub-Zero fridge, Viking range, and Meile dishwasher, as well as a wine fridge. The extra-large primary bedroom can easily accommodate a king sized bed and the closets are huge! The second bed is currently being used as an office, but goes both ways. There is also a separate dining area, beautifully designed bathroom, and several extra closets. Located on 23rd St between 7th and 8th at Chelsea Gardens, which is made up of two art deco style buildings with a gorgeous common garden in between. There is a 24 hour doorman, live-in super, elevators, laundry, bike room, and storage. Quite possibly the most convenient location in Manhattan. Right next to the red and blue lines, only a short walk to the orange and yellow lines. Close to Whole Foods, Trader Joes, every furniture and home store you could want, and of course the high line. If you would like to arrange a private showing, let me know and I'll make it happen.",
+        image_url: 'https://www.compass.com/m/0/d44366c0-e9d8-4eef-a6b1-c8545025b41d/1500x1000.jpg'
+    },
+    {
+        address: '11 West 18th St',
+        apt_num: '5E',
+        city: 'New York',
+        state: 'NY',
+        zip_code: 10011,
+        neighborhood: 'Flatiron',
+        borough: 'Manhattan',
+        status: 'Coming Soon',
+        property_type: 'Co-op',
+        bedrooms: 3,
+        bathrooms: 1,
+        price: 1695000,
+        square_feet: 0,
+        price_per_sq_ft: 0,
+        description: "Rarely Available Flatiron Loft with No Monthly Maintenance! This is a true loft apartment with high ceilings, and approx 1,300sf of space, currently configured as a 3 bedroom. The huge eat-in-kitchen has a large skylight overhead, stainless appliances, lots of counter and cabinet space. In addition, this apartment comes with an in-unit washer/dryer and 2 private storage spaces downstairs, including bicycle and stroller parking. Located on West 18th and 5th, this amazing Flatiron Loft resides in one of the most highly desired locations in Manhattan. It doesn't get more convenient being this close to Union Square, the farmer's market, and easy access to virtually every subway line you could possibly ask for. Contact me now for a private showing. With no monthly maintenance payment, I expect this to go quickly.",
+        image_url: 'https://www.compass.com/m/0/b386be52-9b19-4a04-9573-20205f0e2905/1500x1000.jpg'
+                
+    }
+]
