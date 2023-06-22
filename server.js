@@ -1,7 +1,7 @@
 // DEPENDENCIES
 const express = require('express')
 const methodOverride = require('method-override')
-const mongoose = require('mongoose')
+const mongoose = require('./config/db')
 const Listing = require('./models/listing')
 
 // CONFIGURATION
@@ -9,12 +9,9 @@ require('dotenv').config({ path: './.env' })
 const PORT = process.env.PORT
 const app = express()
 
-// MONGOOSE CONNECTION
-mongoose.set('strictQuery', true);
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true})
-
 // MIDDLEWARE
 app.use(express.static('public'))
+app.use(express.json());
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))
 
@@ -25,7 +22,6 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
-
 
 // ROUTES
 app.get('/', (req, res) => {
