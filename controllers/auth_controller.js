@@ -2,7 +2,9 @@ const User = require('../models/User');
 const { createSecretToken } = require('../util/SecretToken');
 const bcrypt = require('bcrypt');
 
+// Signup
 module.exports.Signup = async (req, res) => {
+  // function to create a new user
   try {
     const { email, password, confirmPassword, username, createdAt } = req.body;
     if (password !== confirmPassword) {
@@ -25,8 +27,9 @@ module.exports.Signup = async (req, res) => {
   }
 };
 
-
+// Login
 module.exports.Login = async (req, res) => {
+  // function to login a user
   try {
     const { email, password } = req.body;
     if(!email || !password ){

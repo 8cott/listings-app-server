@@ -3,7 +3,7 @@ const listings = express.Router();
 const Listing = require('../models/listing.js');
 const listingSeedData = require('../models/seed.js');
 
-// INDEX
+// INDEX 
 listings.get('/', (req, res) => {
   Listing.find()
     .then((foundListings) => {
@@ -14,7 +14,7 @@ listings.get('/', (req, res) => {
     });
 });
 
-// CREATE
+// CREATE 
 listings.post('/', (req, res) => {
   console.log(req.body);
   if (!req.body.image_url) {
@@ -68,7 +68,7 @@ listings.get('/:id', (req, res) => {
     });
 });
 
-// SEED ROUTE - consider removing this in a production application
+// SEED ROUTE
 listings.get('/data/seed', (req, res) => {
   Listing.insertMany(listingSeedData)
     .then((createdListings) => {
