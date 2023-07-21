@@ -29,6 +29,17 @@ listings.post('/', (req, res) => {
     });
 });
 
+// SHOW
+listings.get('/:id', (req, res) => {
+  Listing.findById(req.params.id)
+    .then((foundListing) => {
+      res.json(foundListing);
+    })
+    .catch((err) => {
+      res.status(404).json({ error: err.message });
+    });
+});
+
 // EDIT
 listings.put('/:id', (req, res) => {
   Listing.findByIdAndUpdate(req.params.id, req.body, { new: true })
@@ -57,16 +68,7 @@ listings.delete('/:id', (req, res) => {
     });
 });
 
-// SHOW
-listings.get('/:id', (req, res) => {
-  Listing.findById(req.params.id)
-    .then((foundListing) => {
-      res.json(foundListing);
-    })
-    .catch((err) => {
-      res.status(404).json({ error: err.message });
-    });
-});
+
 
 // SEED ROUTE
 listings.get('/data/seed', (req, res) => {
