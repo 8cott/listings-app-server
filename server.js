@@ -28,8 +28,9 @@ app.use((req, res, next) => {
 
 // ROUTES
 app.get('/', (req, res) => {
-  res.redirect('/listings');
+  res.sendFile(path.join(__dirname, '../client/dist/index.html'));
 });
+
 app.use('/', authRoute);
 
 // LISTINGS
