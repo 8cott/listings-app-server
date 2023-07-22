@@ -50,7 +50,7 @@ if (process.env.NODE_ENV === 'production') {
   app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/dist/index.html'));
   });
-} // <-- This closing bracket was missing.
+}  
 
 // 404 Page
 app.use((req, res, next) => {
