@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const mongoose = require('./config/db')
 const cookieParser = require('cookie-parser');
 const authRoute = require('./routes/AuthRoute');
+const path = require('path');
 
 // CONFIGURATION
 require('dotenv').config({ path: './.env' })
@@ -11,6 +12,7 @@ const PORT = process.env.PORT
 const app = express()
 
 // MIDDLEWARE
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static('public'))
 app.use(express.json());
 app.use(express.urlencoded({extended: true}))
@@ -28,7 +30,7 @@ app.use((req, res, next) => {
 
 // ROUTES
 app.get('/', (req, res) => {
-  res.redirect('/listings');
+  res.redirect('/');
 });
 app.use('/', authRoute);
 
