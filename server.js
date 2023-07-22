@@ -5,6 +5,7 @@ const mongoose = require('./config/db')
 const cookieParser = require('cookie-parser');
 const authRoute = require('./routes/AuthRoute');
 const path = require('path');
+const cors = require('cors');
 
 // CONFIGURATION
 require('dotenv').config({ path: './.env' })
@@ -18,17 +19,10 @@ app.use(methodOverride('_method'))
 app.use(cookieParser());
 
 // Enable CORS
-app.use((req, res, next) => {
-  const allowOrigin = process.env.NODE_ENV === 'production'
-    ? 'https://sr-listings-app-48514e312801.herokuapp.com'
-    : 'http://localhost:5173';
-  
-  res.setHeader('Access-Control-Allow-Origin', allowOrigin);
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  next();
-});
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 
 // ROUTES
 app.get('/', (req, res) => {
