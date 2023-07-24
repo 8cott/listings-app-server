@@ -11,13 +11,6 @@ require('dotenv').config({ path: './.env' })
 const PORT = process.env.PORT
 const app = express()
 
-// MIDDLEWARE
-app.use(express.static('public'))
-app.use(express.json());
-app.use(express.urlencoded({extended: true}))
-app.use(methodOverride('_method'))
-app.use(cookieParser());
-
 // Enable CORS
 app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Origin', process.env.CLIENT_URL);
@@ -26,6 +19,12 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Credentials', true);   
   next();
 });
+
+// MIDDLEWARE
+app.use(express.json());
+app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
+app.use(cookieParser());
 
 // ROUTES
 app.use('/', authRoute);
