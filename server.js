@@ -1,28 +1,36 @@
 // DEPENDENCIES
-const express = require('express')
-const methodOverride = require('method-override')
-const mongoose = require('./config/db')
+const express = require('express');
+const methodOverride = require('method-override');
+const mongoose = require('./config/db');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');  // Add this line
 const authRoute = require('./routes/AuthRoute');
 const listingsController = require('./controllers/listings_controller.js');
 
 // CONFIGURATION
-require('dotenv').config({ path: './.env' })
-const PORT = process.env.PORT
-const app = express()
+require('dotenv').config({ path: './.env' });
+const PORT = process.env.PORT;
+const app = express();
 
-// Enable CORS
-app.use(cors({
-  origin: process.env.CLIENT_URL,
-  credentials: true, 
-  optionsSuccessStatus: 200,
-}));
+// Enable CORS using the allowCors middleware
+const allowCors = fn => async (req, res) => {
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', process.env.CLIENT_URL);
+  res.setHeader('Access-Control-Allow-Methods', 'GET, OPTIONS, PATCH, DELETE, POST, PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+  return await fn(req, res);
+};
 
 // MIDDLEWARE
 app.use(express.json());
-app.use(express.urlencoded({extended: true}))
-app.use(methodOverride('_method'))
+app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 app.use(cookieParser());
 
 // ROUTES
@@ -32,16 +40,16 @@ app.get('/', (req, res) => {
 });
 
 // LISTINGS
-app.use('/listings', listingsController);
+app.use('/listings', allowCors(listingsController));
 
 // 404 Page
 app.use('*', (req, res) => {
-    res.send('404')
-})  
+  res.send('404');
+});
 
 // LISTEN
 app.listen(PORT, () => {
   console.log('listening on port', PORT, '🔌');
-})
+});
 
 module.exports = app;
