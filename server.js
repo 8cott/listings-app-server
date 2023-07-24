@@ -3,7 +3,7 @@ const express = require('express');
 const methodOverride = require('method-override');
 const mongoose = require('./config/db');
 const cookieParser = require('cookie-parser');
-const cors = require('cors');  // Add this line
+const cors = require('cors'); 
 const authRoute = require('./routes/AuthRoute');
 const listingsController = require('./controllers/listings_controller.js');
 
