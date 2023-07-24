@@ -13,11 +13,10 @@ const PORT = process.env.PORT
 const app = express()
 
 // Enable CORS
-// Remove the previous CORS setup and replace with the cors package configuration
 app.use(cors({
-  origin: process.env.CLIENT_URL,  // This is your client URL
-  credentials: true,  // This allows cookies to be sent
-  optionsSuccessStatus: 200,  // Some legacy browsers choke on a 204 status
+  origin: process.env.CLIENT_URL,
+  credentials: true, 
+  optionsSuccessStatus: 200,
 }));
 
 // MIDDLEWARE
