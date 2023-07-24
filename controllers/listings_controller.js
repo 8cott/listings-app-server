@@ -45,7 +45,7 @@ listings.put('/:id', (req, res) => {
   Listing.findByIdAndUpdate(req.params.id, req.body, { new: true })
     .then((updatedListing) => {
       if (!updatedListing) {
-        return res.status(404).json({ error: 'Listing not found' });
+        return res.status(404).json({ error: err.message });
       }
       res.json(updatedListing);
     })
@@ -59,7 +59,7 @@ listings.delete('/:id', (req, res) => {
   Listing.findByIdAndDelete(req.params.id)
     .then((deletedListing) => {
       if (!deletedListing) {
-        return res.status(404).json({ error: 'Listing not found' });
+        return res.status(404).json({ error: err.message });
       }
       res.json(deletedListing);
     })

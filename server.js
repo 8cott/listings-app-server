@@ -4,6 +4,7 @@ const methodOverride = require('method-override')
 const mongoose = require('./config/db')
 const cookieParser = require('cookie-parser');
 const authRoute = require('./routes/AuthRoute');
+const listingsController = require('./controllers/listings_controller.js');
 
 // CONFIGURATION
 require('dotenv').config({ path: './.env' })
@@ -27,13 +28,12 @@ app.use((req, res, next) => {
 });
 
 // ROUTES
+app.use('/', authRoute);
 app.get('/', (req, res) => {
   res.redirect('/listings');
 });
-app.use('/', authRoute);
 
 // LISTINGS
-const listingsController = require('./controllers/listings_controller.js');
 app.use('/listings', listingsController);
 
 // 404 Page

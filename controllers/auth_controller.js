@@ -8,11 +8,11 @@ module.exports.Signup = async (req, res) => {
   try {
     const { email, password, confirmPassword, username, createdAt } = req.body;
     if (password !== confirmPassword) {
-      return res.status(400).json({ message: 'Passwords do not match' });
+      return res.status(400).json({ success: false, error: 'Passwords do not match' });
     }
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json({ message: 'User already exists' });
+      return res.status(400).json({ success: false, error: 'User already exists' });
     }
     const user = await User.create({ email, password, username, createdAt });
     const token = createSecretToken(user._id, user.username); 
@@ -20,12 +20,13 @@ module.exports.Signup = async (req, res) => {
       withCredentials: true,
       httpOnly: false,
     });
-    return res.status(201).json({ message: 'Signed in successfully', success: true, user });
+    return res.status(201).json({ message: 'Signed up successfully', success: true, user });
   } catch (error) {
     console.error(error);
-    return res.status(500).json({ message: 'Internal server error' });
+    return res.status(500).json({ success: false, error: 'Internal server error' });
   }
 };
+
 
 // Login
 module.exports.Login = async (req, res) => {
