@@ -3,6 +3,7 @@ const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('./config/db')
 const cookieParser = require('cookie-parser');
+const cors = require('cors');  // Add this line
 const authRoute = require('./routes/AuthRoute');
 const listingsController = require('./controllers/listings_controller.js');
 
@@ -12,13 +13,12 @@ const PORT = process.env.PORT
 const app = express()
 
 // Enable CORS
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', process.env.CLIENT_URL);
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  res.setHeader('Access-Control-Allow-Credentials', true);   
-  next();
-});
+// Remove the previous CORS setup and replace with the cors package configuration
+app.use(cors({
+  origin: process.env.CLIENT_URL,  // This is your client URL
+  credentials: true,  // This allows cookies to be sent
+  optionsSuccessStatus: 200,  // Some legacy browsers choke on a 204 status
+}));
 
 // MIDDLEWARE
 app.use(express.json());
@@ -38,7 +38,7 @@ app.use('/listings', listingsController);
 // 404 Page
 app.use('*', (req, res) => {
     res.send('404')
-  })  
+})  
 
 // LISTEN
 app.listen(PORT, () => {
