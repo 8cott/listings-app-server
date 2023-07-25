@@ -14,7 +14,7 @@ const app = express();
 
 // Enable CORS
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: 'https://sr-listings-app.vercel.app',
   credentials: true, 
   optionsSuccessStatus: 200,
   https: true,
