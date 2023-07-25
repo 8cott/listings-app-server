@@ -43,7 +43,7 @@ app.use('/listings', listingsController);
 
 // 404 Page
 app.use('*', (req, res) => {
-  res.send('404');
+  res.status(404).send({ error: 'Resource not found' });
 });
 
 // LISTEN
