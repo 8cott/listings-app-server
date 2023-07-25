@@ -35,7 +35,7 @@ app.use(cookieParser());
 // ROUTES
 app.use('/', authRoute);
 app.get('/', (req, res) => {
-  res.redirect('/listings');
+  res.status(200).send('Welcome to the API');
 });
 
 // LISTINGS
