@@ -18,6 +18,12 @@ app.use((req, res, next) => {
   next();
 });
 
+// Testing
+app.get('/debug', (req, res) => {
+  res.send(`CLIENT_URL is: ${process.env.CLIENT_URL}`);
+});
+
+
 // Enable CORS
 app.use(cors({
   origin: process.env.CLIENT_URL,
