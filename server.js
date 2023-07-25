@@ -12,9 +12,15 @@ require('dotenv').config({ path: './.env' });
 const PORT = process.env.PORT;
 const app = express();
 
+app.use((req, res, next) => {
+  console.log('Origin:', req.headers.origin);
+  console.log('CLIENT_URL:', process.env.CLIENT_URL);
+  next();
+});
+
 // Enable CORS
 app.use(cors({
-  origin: 'https://sr-listings-app.vercel.app',
+  origin: process.env.CLIENT_URL,
   credentials: true, 
   optionsSuccessStatus: 200,
   https: true,
