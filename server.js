@@ -6,17 +6,14 @@ const cookieParser = require('cookie-parser');
 const cors = require('cors'); 
 const authRoute = require('./routes/AuthRoute');
 const listingsController = require('./controllers/listings_controller.js');
+const path = require('path'); 
 
 // CONFIGURATION
 require('dotenv').config({ path: './.env' });
 const PORT = process.env.PORT;
 const app = express();
 
-app.use((req, res, next) => {
-  console.log('Origin:', req.headers.origin);
-  console.log('CLIENT_URL:', process.env.CLIENT_URL);
-  next();
-});
+app.use(express.static(path.join(__dirname, 'client/dist')));
 
 // Enable CORS
 app.use(cors({
@@ -34,16 +31,11 @@ app.use(cookieParser());
 
 // ROUTES
 app.use('/', authRoute);
-app.get('/', (req, res) => {
-  res.status(200).send('Welcome to the API');
-});
-
-// LISTINGS
 app.use('/listings', listingsController);
 
-// 404 Page
-app.use('*', (req, res) => {
-  res.status(404).send({ error: 'Resource not found' });
+// Catch-all route for any other requests, serve the front-end HTML
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/dist/index.html'));
 });
 
 // LISTEN
