@@ -7,6 +7,7 @@ const cors = require('cors');
 const authRoute = require('./routes/AuthRoute');
 const listingsController = require('./controllers/listings_controller.js');
 const path = require('path'); 
+const allowedOrigins = [process.env.CLIENT_URL, 'http://localhost:5173'];
 
 // CONFIGURATION
 require('dotenv').config({ path: './.env' });
@@ -17,7 +18,15 @@ app.use(express.static(path.join(__dirname, 'client/dist')));
 
 // Enable CORS
 app.use(cors({
-  origin: process.env.CLIENT_URL,
+  origin: function(origin, callback){
+    if(!origin) return callback(null, true);
+    if(allowedOrigins.indexOf(origin) === -1){
+      const msg = 'The CORS policy for this site does not ' +
+                'allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  },
   credentials: true, 
   optionsSuccessStatus: 200,
   https: true,
