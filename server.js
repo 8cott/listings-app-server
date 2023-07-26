@@ -39,7 +39,17 @@ app.use(methodOverride('_method'));
 app.use(cookieParser());
 
 // ROUTES
+// SERVER HOME PAGE
+app.get("/", (req, res) => {
+  res.json({
+    message: "Welcome to the Listings App API! 🤘",
+  });
+});
+
+// AUTH ROUTE
 app.use('/', authRoute);
+
+// LISTINGS ROUTE
 app.use('/listings', listingsController);
 
 // Catch-all route for any other requests, serve the front-end HTML
