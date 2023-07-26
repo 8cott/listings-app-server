@@ -13,7 +13,7 @@ Check out the live demo of the Real Estate Listings App [here](https://listings-
 ## Table of Contents
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
-- [Deployment] (#deployment)
+- [Deployment](#deployment)
 - [API Endpoints](#api-endpoints)
 - [License](#license)
 - [Contact Information](#contact-information)
@@ -54,6 +54,7 @@ The client side of this app is deployed on [Heroku](https://www.heroku.com/)
 
 ## License
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 This project is licensed under the ISC License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact Information
