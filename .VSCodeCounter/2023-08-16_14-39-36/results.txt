@@ -1,0 +1,46 @@
+Date : 2023-08-16 14:39:36
+Directory : /Users/scottrubin/Coding/projects/listings-app-server
+Total : 13 files,  2568 codes, 26 comments, 55 blanks, all 2649 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      1,981 |          0 |          2 |      1,983 |
+| JavaScript |         10 |        538 |         26 |         39 |        603 |
+| Markdown   |          1 |         49 |          0 |         14 |         63 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                     | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                        |         13 |      2,568 |         26 |         55 |      2,649 |
+| . (Files)                                                                                |          4 |      2,075 |         10 |         27 |      2,112 |
+| config                                                                                   |          1 |          8 |          1 |          2 |         11 |
+| controllers                                                                              |          2 |        124 |         10 |         14 |        148 |
+| middleware                                                                               |          1 |         18 |          1 |          2 |         21 |
+| models                                                                                   |          3 |        329 |          4 |          6 |        339 |
+| routes                                                                                   |          1 |          7 |          0 |          2 |          9 |
+| util                                                                                     |          1 |          7 |          0 |          2 |          9 |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                 | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| /Users/scottrubin/Coding/projects/listings-app-server/config/db.js                       | JavaScript |          8 |          1 |          2 |         11 |
+| /Users/scottrubin/Coding/projects/listings-app-server/controllers/auth_controller.js     | JavaScript |         55 |          4 |          4 |         63 |
+| /Users/scottrubin/Coding/projects/listings-app-server/controllers/listings_controller.js | JavaScript |         69 |          6 |         10 |         85 |
+| /Users/scottrubin/Coding/projects/listings-app-server/middleware/AuthMiddleware.js       | JavaScript |         18 |          1 |          2 |         21 |
+| /Users/scottrubin/Coding/projects/listings-app-server/models/User.js                     | JavaScript |         25 |          0 |          4 |         29 |
+| /Users/scottrubin/Coding/projects/listings-app-server/models/listing.js                  | JavaScript |         22 |          4 |          2 |         28 |
+| /Users/scottrubin/Coding/projects/listings-app-server/models/seed.js                     | JavaScript |        282 |          0 |          0 |        282 |
+| /Users/scottrubin/Coding/projects/listings-app-server/package-lock.json                  | JSON       |      1,951 |          0 |          1 |      1,952 |
+| /Users/scottrubin/Coding/projects/listings-app-server/package.json                       | JSON       |         30 |          0 |          1 |         31 |
+| /Users/scottrubin/Coding/projects/listings-app-server/readme.md                          | Markdown   |         49 |          0 |         14 |         63 |
+| /Users/scottrubin/Coding/projects/listings-app-server/routes/AuthRoute.js                | JavaScript |          7 |          0 |          2 |          9 |
+| /Users/scottrubin/Coding/projects/listings-app-server/server.js                          | JavaScript |         45 |         10 |         11 |         66 |
+| /Users/scottrubin/Coding/projects/listings-app-server/util/SecretToken.js                | JavaScript |          7 |          0 |          2 |          9 |
+| Total                                                                                    |            |      2,568 |         26 |         55 |      2,649 |
++------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
