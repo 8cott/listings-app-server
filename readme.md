@@ -3,7 +3,7 @@
 [![Express.js](https://img.shields.io/badge/Express.js-4.18.2-blue)](https://expressjs.com/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Latest-green)](https://www.mongodb.com/)
 
-This is the client-side of the Listings App, a full-stack application demonstrating proficiency in building a MERN (MongoDB, Express.js, React, Node.js) stack app with CRUD functionality. The app displays real estate listings from my career as a real estate broker and allows authenticated users to view, create, edit, update, and delete listings.
+This is the server-side of the Listings App, a full-stack application demonstrating proficiency in building a MERN (MongoDB, Express.js, React, Node.js) stack app with CRUD functionality. The app displays real estate listings from my career as a real estate broker and allows authenticated users to view, create, edit, update, and delete listings.
 
 The server is built using Node.js, Express.js, and MongoDB.
 
